@@ -1,0 +1,26 @@
+{
+  "name": "eupresa-gestor-app",
+  "version": "0.0.1",
+  "description": "Eupresa Gestor Application Module",
+  "author": "Lucas Ribeiro Ferreira <ribeiroferreiralucas@gmail.com>",
+  "homepage": "https://github.com/ribeiroferreiralucas/eupresa-gestor#readme",
+  "license": "ISC",
+  "main": "src/eupresa-gestor-app.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ribeiroferreiralucas/eupresa-gestor.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/ribeiroferreiralucas/eupresa-gestor/issues"
+  }
+}
