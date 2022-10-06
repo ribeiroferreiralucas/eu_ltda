@@ -27,7 +27,7 @@ jobs:
     - run: flutter pub get
     - run: flutter config --enable-web
     - run: flutter test
-    - run: flutter build web
+    - run: flutter build web --base-href "/eu_ltda/"
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
       with:
