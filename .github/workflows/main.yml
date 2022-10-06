@@ -41,9 +41,9 @@ jobs:
     steps:
       - name: Get Archive
         uses: actions/download-artifact@v3
-          with:
-            name: web-build
-            path: build/web
+        with:
+          name: web-build
+          path: build/web
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
