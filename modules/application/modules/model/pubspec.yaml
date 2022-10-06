@@ -1,0 +1,7 @@
+name: model
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dev_dependencies:
+  test: ^1.21.6

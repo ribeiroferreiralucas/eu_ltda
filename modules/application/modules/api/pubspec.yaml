@@ -1,0 +1,10 @@
+name: api
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dependencies:
+  model: 
+    path: ../model
+
+dev_dependencies:
+  test: ^1.21.6

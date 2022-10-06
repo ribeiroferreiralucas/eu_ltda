@@ -1,0 +1,57 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "eu_ltda",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "eu_ltda (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "eu_ltda (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "application",
+            "cwd": "modules/application",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "application (profile mode)",
+            "cwd": "modules/application",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "application (release mode)",
+            "cwd": "modules/application",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "api",
+            "cwd": "modules/application/modules/api",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "model",
+            "cwd": "modules/application/modules/model",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}
