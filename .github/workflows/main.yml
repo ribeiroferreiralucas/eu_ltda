@@ -33,7 +33,7 @@ jobs:
         cache: true
         cache-key: 'flutter-:os:-:channel:-:version:-:arch:' 
     - run: cd ${{ matrix.path_module }} && dart pub get 
-    - run: cd ${{ martix.path_module }} && dart test --reporter=github
+    - run: cd ${{ matrix.path_module }} && dart test --reporter=github
   build-web:
     needs: test
     runs-on: ubuntu-latest
