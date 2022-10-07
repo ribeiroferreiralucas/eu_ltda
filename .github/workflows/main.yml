@@ -19,6 +19,12 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+        matrix:
+            module:
+                - modules/model
+                - modules/application
+                - modules/api
     steps:
     - uses: actions/checkout@v3
     - uses: subosito/flutter-action@v2
@@ -26,15 +32,8 @@ jobs:
         channel: 'stable'
         cache: true
         cache-key: 'flutter-:os:-:channel:-:version:-:arch:' 
-    - run: cd modules/model && dart pub get 
-    - run: cd modules/model && dart test --reporter=github
-    - run: cd modules/application && dart pub get
-    - run: cd modules/application && dart test --reporter=github
-    - run: cd modules/api && dart pub get
-    - run: cd modules/api && dart test --reporter=github
-    - run: cd ../../
-    - run: flutter pub get
-    - run: flutter test --reporter=expanded
+    - run: cd $ && dart pub get 
+    - run: cd $ && dart test --reporter=github
   build-web:
     needs: test
     runs-on: ubuntu-latest
@@ -46,6 +45,7 @@ jobs:
         cache: true
         cache-key: 'flutter-:os:-:channel:-:version:-:arch:' 
     - run: flutter pub get
+    - run: flutter test --reporter=expanded
     - run: flutter build web --base-href "/eu_ltda/"
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
