@@ -24,6 +24,9 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
+        cache: true
+        cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' # optional, change this to force refresh cache
+        cache-path: ${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch: # optional, change this to specify the cache path
     - run: cd modules/model && dart pub get 
     - run: cd modules/model && dart test --reporter=github
     - run: cd modules/application && dart pub get
@@ -41,8 +44,10 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
+        cache: true
+        cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' # optional, change this to force refresh cache
+        cache-path: ${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch: # optional, change this to specify the cache path
     - run: flutter pub get
-    - run: flutter test
     - run: flutter build web --base-href "/eu_ltda/"
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
