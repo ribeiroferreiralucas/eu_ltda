@@ -31,7 +31,7 @@ jobs:
       with:
         channel: 'stable'
         cache: true
-        cache-key: 'flutter-:os:-:channel:-:version:-:arch:' 
+        cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' 
     - run: cd ${{ matrix.path_module }} && dart pub get 
     - run: cd ${{ matrix.path_module }} && dart test --reporter=github
   build-web:
@@ -43,7 +43,7 @@ jobs:
       with:
         channel: 'stable'
         cache: true
-        cache-key: 'flutter-:os:-:channel:-:version:-:arch:' 
+        cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' 
     - run: flutter pub get
     - run: flutter test --reporter=expanded
     - run: flutter build web --base-href "/eu_ltda/"
