@@ -25,6 +25,7 @@ jobs:
       with:
         channel: 'stable'
         cache: true
+        cache-key: 'flutter-:os:-:channel:-:version:-:arch:' 
     - run: cd modules/model && dart pub get 
     - run: cd modules/model && dart test --reporter=github
     - run: cd modules/application && dart pub get
@@ -43,6 +44,7 @@ jobs:
       with:
         channel: 'stable'
         cache: true
+        cache-key: 'flutter-:os:-:channel:-:version:-:arch:' 
     - run: flutter pub get
     - run: flutter build web --base-href "/eu_ltda/"
     - name: Archive Production Artifact
