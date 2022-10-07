@@ -21,7 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
         matrix:
-            module: [modules/model, modules/application, modules/api]
+          include:
+            - path_module: modules/model
+            - path_module: modules/application
+            - path_module: modules/api
     steps:
     - uses: actions/checkout@v3
     - uses: subosito/flutter-action@v2
@@ -29,8 +32,8 @@ jobs:
         channel: 'stable'
         cache: true
         cache-key: 'flutter-:os:-:channel:-:version:-:arch:' 
-    - run: cd ${{ martix.module }} && dart pub get 
-    - run: cd ${{ martix.module }} && dart test --reporter=github
+    - run: cd ${{ matrix.path_module }} && dart pub get 
+    - run: cd ${{ martix.path_module }} && dart test --reporter=github
   build-web:
     needs: test
     runs-on: ubuntu-latest
