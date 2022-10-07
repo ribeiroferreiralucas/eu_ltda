@@ -25,8 +25,18 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
+    - run: cd modules/model
+    - run: dart pub get 
+    - run: dart test --reporter=github
+    - run: cd ../../modules/application
+    - run: dart pub get
+    - run: dart test --reporter=github
+    - run: cd ../../modules/api
+    - run: dart pub get
+    - run: dart test --reporter=github
+    - run: cd ../../
     - run: flutter pub get
-    - run: flutter test
+    - run: flutter test --reporter=expanded
   build-web:
     needs: test
     runs-on: ubuntu-latest
@@ -35,6 +45,8 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
+    - run: flutter pub get
+    - run: flutter test
     - run: flutter build web --base-href "/eu_ltda/"
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
