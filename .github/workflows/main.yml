@@ -32,8 +32,8 @@ jobs:
         channel: 'stable'
         cache: true
         cache-key: 'flutter-:os:-:channel:-:version:-:arch:' 
-    - run: cd $ && dart pub get 
-    - run: cd $ && dart test --reporter=github
+    - run: cd ${{ martix.module }} && dart pub get 
+    - run: cd ${{ martix.module }} && dart test --reporter=github
   build-web:
     needs: test
     runs-on: ubuntu-latest
