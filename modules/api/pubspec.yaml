@@ -5,6 +5,8 @@ environment:
 dependencies:
   model: 
     path: ../model
+  application: 
+    path: ../application
 
 dev_dependencies:
   test: ^1.21.6
