@@ -32,8 +32,8 @@ jobs:
         channel: 'stable'
         cache: true
         cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' 
-    - run: cd ${{ matrix.path_module }} && dart pub get 
-    - run: cd ${{ matrix.path_module }} && dart test --reporter=github
+    - run: cd ${{ matrix.path_module }} && flutter pub get 
+    - run: cd ${{ matrix.path_module }} && flutter test --reporter=github
   build-web:
     needs: test
     runs-on: ubuntu-latest
