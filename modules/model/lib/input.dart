@@ -1,6 +1,6 @@
 class Input {
-  String _id;
-  String get id => _id;
+  int _id;
+  int get id => _id;
 
   String _name;
   String get name => _name;
@@ -12,9 +12,9 @@ class Input {
   String get mesureUnit => _mesureUnit;
 
   Input(this._id, this._name, this._buyQnt, this._mesureUnit);
-
+  
   static Input createNull(
-      {String id = "Input_Id",
+      {int id = 1,
       String name = "Input Name",
       double buyQnt = 1000,
       String mesureUnit = 'units'}) {

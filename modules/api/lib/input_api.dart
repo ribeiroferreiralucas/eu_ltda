@@ -7,8 +7,7 @@ class InputApi {
   
   InputApi(this.inputsRepository);
 
-  List<Input> listAllInputs() {
-    List<Input> allInputs = inputsRepository.listAll();
-    return allInputs;
+  Future<List<Input>> listAllInputs() {
+    return inputsRepository.listAll();
   }
 }
