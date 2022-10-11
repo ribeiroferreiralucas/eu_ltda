@@ -21,11 +21,10 @@ class Inputs extends Table {
 @DriftDatabase(tables: [Inputs])
 class EuLtdaDriftDatabase extends _$EuLtdaDriftDatabase {
     // we tell the database where to store the data with this constructor
-  EuLtdaDriftDatabase(QueryExecutor? queryExecutor) : super(queryExecutor == null ? _openConnection() : queryExecutor);
+  EuLtdaDriftDatabase() : super(_openConnection());
 
-  static EuLtdaDriftDatabase createNull(){
-    return EuLtdaDriftDatabase(NativeDatabase.memory());
-  }
+  EuLtdaDriftDatabase.createNull() : super(NativeDatabase.memory());
+  
   // you should bump this number whenever you change or add a table definition.
   // Migrations are covered later in the documentation.
   @override
