@@ -5,16 +5,14 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('The InputApi', () {
-
     test('should list all Inputs in InputsRepository', () async {
-      InputsRepository inputsRepository = InputsRepository.createNull(values: [Input.createNull()]);
+      InputsRepository inputsRepository = InputsRepository.createNull(values: [Input.createTestInstance()]);
       var inputApi = new InputApi(inputsRepository);
 
       List<Input> inputListResponse = await inputApi.listAllInputs();
 
-      var expectedInputs = [Input.createNull()];
+      var expectedInputs = [Input.createTestInstance()];
       expect(inputListResponse, equals(expectedInputs));
     });
-  
   });
 }

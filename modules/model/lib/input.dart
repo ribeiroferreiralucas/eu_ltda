@@ -12,14 +12,16 @@ class Input {
   String get mesureUnit => _mesureUnit;
 
   Input(this._id, this._name, this._buyQnt, this._mesureUnit);
-  
-  static Input createNull(
+
+  Input.createTestInstance(
       {int id = 1,
       String name = "Input Name",
       double buyQnt = 1000,
-      String mesureUnit = 'units'}) {
-    return Input(id, name, buyQnt, mesureUnit);
-  }
+      String mesureUnit = 'units'})
+      : _id = id,
+        _name = name,
+        _buyQnt = buyQnt,
+        _mesureUnit = mesureUnit;
 
   @override
   bool operator ==(Object other) =>
