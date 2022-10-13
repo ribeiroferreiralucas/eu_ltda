@@ -1,4 +1,4 @@
-import 'package:application/infra/repository/inputs_repository.dart';
+import 'package:application/inputs.dart';
 import 'package:model/input.dart';
 
 class InputApi {

@@ -1,15 +1,17 @@
-import 'package:application/infra/drift_wrapper/drift_database.dart' as drift;
 import 'package:drift/drift.dart';
 import 'package:model/input.dart';
+import 'package:application/inputs.dart';
 
-class InputsRepository {
+import '../drift_wrapper/drift_database.dart' as drift;
+
+class InputsRepositoryImpl implements InputsRepository{
   final drift.EuLtdaDriftDatabase database;
   final drift.$InputsTable table;
 
-  InputsRepository(this.database) : table = database.inputs;
+  InputsRepositoryImpl(this.database) : table = database.inputs;
 
-  static InputsRepository createNull({List<Input> values = const []}) {
-    var repo = InputsRepository(drift.EuLtdaDriftDatabase.createNull());
+  static InputsRepositoryImpl createNull({List<Input> values = const []}) {
+    var repo = InputsRepositoryImpl(drift.EuLtdaDriftDatabase.createNull());
     var database = repo.database;
 
     var inputsTable = database.inputs;

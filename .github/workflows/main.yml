@@ -24,6 +24,7 @@ jobs:
           include:
             - path_module: modules/model
             - path_module: modules/application
+            - path_module: modules/infra_repository
             - path_module: modules/api
     steps:
     - uses: actions/checkout@v3

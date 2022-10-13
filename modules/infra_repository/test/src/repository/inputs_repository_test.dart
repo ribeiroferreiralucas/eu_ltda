@@ -1,20 +1,20 @@
 import 'dart:ffi';
 
-import 'package:application/infra/drift_wrapper/drift_database.dart';
-import 'package:application/infra/repository/inputs_repository.dart';
 import 'package:drift/drift.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:infra_repository/src/drift_wrapper/drift_database.dart';
+import 'package:infra_repository/src/repository/inputs_repository_impl.dart';
 import 'package:model/input.dart' as domain;
 
 
 void main() {
   group('The Inputs Repository', () {
     late EuLtdaDriftDatabase database;
-    late InputsRepository inputsRepository;
+    late InputsRepositoryImpl inputsRepository;
 
     setUp(() {
       database = EuLtdaDriftDatabase.createNull();
-      inputsRepository = InputsRepository(database);
+      inputsRepository = InputsRepositoryImpl(database);
     });
 
     tearDown(() {
@@ -51,7 +51,7 @@ void main() {
 InputsCompanion newInputTableRegistry({int? id, String name = 'anyName', double buyQnt = 1000, String mesureUnit = 'units'}) => 
     InputsCompanion.insert(id: Value.ofNullable(id), name: name, buyQnt: buyQnt, mesureUnit: mesureUnit);
 
-Future<List<domain.Input>> callListAll(InputsRepository inputsRepository) async {
+Future<List<domain.Input>> callListAll(InputsRepositoryImpl inputsRepository) async {
   var list = await inputsRepository.listAll();
   return list;
 }

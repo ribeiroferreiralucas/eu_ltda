@@ -1,12 +1,12 @@
 import 'package:api/input_api.dart';
-import 'package:application/infra/repository/inputs_repository.dart';
+import 'package:application/inputs.dart';
 import 'package:model/input.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('The InputApi', () {
     test('should list all Inputs in InputsRepository', () async {
-      InputsRepository inputsRepository = InputsRepository.createNull(values: [Input.createTestInstance()]);
+      InputsRepository inputsRepository = InputsRepositoryFactory().createNull(values: [Input.createTestInstance()]);
       var inputApi = new InputApi(inputsRepository);
 
       List<Input> inputListResponse = await inputApi.listAllInputs();
