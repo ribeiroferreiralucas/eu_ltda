@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:drift/drift.dart';
+import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:infra_repository/src/drift_wrapper/drift_database.dart';
 import 'package:infra_repository/src/repository/inputs_repository_impl.dart';
@@ -13,7 +14,8 @@ void main() {
     late InputsRepositoryImpl inputsRepository;
 
     setUp(() {
-      database = EuLtdaDriftDatabase.createNull();
+      var queryExecutor = NativeDatabase.memory();
+      database = EuLtdaDriftDatabase(queryExecutor);
       inputsRepository = InputsRepositoryImpl(database);
     });
 

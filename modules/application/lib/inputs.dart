@@ -1,2 +1,2 @@
 
-export 'src/inputs/InputsRepository.dart';
+export 'src/inputs/inputs_repository.dart';

@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('The InputApi', () {
     test('should list all Inputs in InputsRepository', () async {
-      InputsRepository inputsRepository = InputsRepositoryFactory().createNull(values: [Input.createTestInstance()]);
+      InputsRepository inputsRepository = InputsRepositoryFactory.createNull(values: [Input.createTestInstance()]);
       var inputApi = new InputApi(inputsRepository);
 
       List<Input> inputListResponse = await inputApi.listAllInputs();
