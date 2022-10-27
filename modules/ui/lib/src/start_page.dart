@@ -26,15 +26,11 @@ class _StartPageState extends State<StartPage> {
   Widget build(BuildContext context) {
     
     return Row(
-      textDirection: TextDirection.ltr,
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         this.widget.createMenuWidget(),
         const Text("Hello World", 
             key: Key("hello_world"),
-            textDirection: TextDirection.ltr,
             style: TextStyle(fontSize: 20),
         )
       ],

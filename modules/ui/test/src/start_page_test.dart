@@ -10,7 +10,7 @@ void main() {
   group("The user in Start Page", () {
     testWidgets('should see hello message', (WidgetTester tester) async {
       
-      await tester.pumpWidget(StartPage.createTestInstance());
+      await tester.pumpWidget(buildWidget(StartPage.createTestInstance()));
 
       var helloWorldElementFinder = find.byWidgetPredicate((widget) => widget.key == const Key("hello_world"));
       var helloWorldText = getSingleAs<Text>(helloWorldElementFinder);
@@ -19,7 +19,7 @@ void main() {
 
     testWidgets('should contains menu', (WidgetTester tester) async {
       
-      await tester.pumpWidget(StartPage.createTestInstance());
+      await tester.pumpWidget(buildWidget(StartPage.createTestInstance()));
 
       var menuWidget = find.byWidgetPredicate((widget) => widget is MenuWidget);
       expect(menuWidget, findsOneWidget);
