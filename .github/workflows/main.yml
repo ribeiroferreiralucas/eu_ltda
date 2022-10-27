@@ -26,6 +26,7 @@ jobs:
             - path_module: modules/application
             - path_module: modules/infra_repository
             - path_module: modules/api
+            - path_module: modules/ui
     steps:
     - uses: actions/checkout@v3
     - uses: subosito/flutter-action@v2

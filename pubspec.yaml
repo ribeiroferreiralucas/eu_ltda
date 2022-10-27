@@ -33,6 +33,8 @@ dependencies:
     sdk: flutter
   application:
     path: modules/application
+  ui:
+    path: modules/ui
   infra_repository:
     path: modules/infra_repository
   drift: 2.2.0
