@@ -54,6 +54,12 @@ jobs:
       with:
         name: web-build
         path: build/web
+    - uses: nanasess/setup-chromedriver@v1
+    - run: |  
+        flutter drive \
+          --driver=test_driver/integration_test.dart \
+          --target=integration_test/database_config_test.dart \
+          -d web-server
   deploy-web:
     needs: build-web
     environment:
