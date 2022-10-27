@@ -53,11 +53,7 @@ jobs:
     - name: Run chromedriver
       run: chromedriver --port=4444 &
     - name: Run Integration Tests
-      run: |  
-          flutter drive \
-          --driver=test_driver/integration_test.dart \
-          --target=integration_test/database_config_test.dart \
-          -d web-server
+      run: sh integration_test.sh
     - name: Build 
       run: flutter build web --base-href "/eu_ltda/"
     - name: Archive Production Artifact
