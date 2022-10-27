@@ -54,12 +54,11 @@ jobs:
       with:
         name: web-build
         path: build/web
-    - name: Serve chromedriver
+    - name: Get chromedriver
       uses: nanasess/setup-chromedriver@v1
-    - name: 
+    - name: Run chromedriver
       run: |
-        export DISPLAY=:99
-        chromedriver --port=4444 --url-base=/wd/hub &
+        chromedriver --port=4444 &
     - name: Run Integration Tests
       run: |  
           flutter drive \
