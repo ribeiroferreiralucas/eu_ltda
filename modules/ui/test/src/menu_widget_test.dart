@@ -3,6 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ui/src/menu_widget.dart';
 import 'dart:ui' as ui;
 
+import '../utils/utils.dart';
+
 void main() {
 
   group("The user in Start Page", () {
@@ -24,22 +26,4 @@ void main() {
     });
 
   });
-}
-
-Widget buildWidget(Widget widget){
-  return new MediaQuery (
-        data: new MediaQueryData.fromWindow(ui.window),
-        child: new Directionality(
-            textDirection: TextDirection.rtl,
-            child: widget
-        )
-  );
-            
-} 
-
-
-
-T getSingleAs<T extends Widget>(Finder helloWorldElement) {
-  var widget = helloWorldElement.evaluate().first.widget as T;
-  return widget;
 }

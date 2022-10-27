@@ -3,6 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ui/src/menu_widget.dart';
 import 'package:ui/src/start_page.dart';
 
+import '../utils/utils.dart';
+
 void main() {
 
   group("The user in Start Page", () {
@@ -28,7 +30,3 @@ void main() {
 
 
 
-T getSingleAs<T extends Widget>(Finder helloWorldElement) {
-  var widget = helloWorldElement.evaluate().first.widget as T;
-  return widget;
-}
