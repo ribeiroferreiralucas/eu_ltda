@@ -51,8 +51,7 @@ jobs:
     - name: Get chromedriver
       uses: nanasess/setup-chromedriver@v1
     - name: Run chromedriver
-      run: |
-        ./test_driver/chromedriver --port=4444 &
+      run: chromedriver --port=4444 &
     - name: Run Integration Tests
       run: |  
           flutter drive \
