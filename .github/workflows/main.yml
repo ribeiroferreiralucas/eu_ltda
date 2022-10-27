@@ -48,23 +48,24 @@ jobs:
         cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' 
     - run: flutter pub get
     - run: flutter test --reporter=expanded
-    - run: flutter build web --base-href "/eu_ltda/"
-    - name: Archive Production Artifact
-      uses: actions/upload-artifact@master
-      with:
-        name: web-build
-        path: build/web
     - name: Get chromedriver
       uses: nanasess/setup-chromedriver@v1
     - name: Run chromedriver
       run: |
-        chromedriver --port=4444 &
+        ./test_driver/chromedriver --port=4444 &
     - name: Run Integration Tests
       run: |  
           flutter drive \
           --driver=test_driver/integration_test.dart \
           --target=integration_test/database_config_test.dart \
           -d web-server
+    - name: Build 
+      run: flutter build web --base-href "/eu_ltda/"
+    - name: Archive Production Artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: web-build
+        path: build/web
   deploy-web:
     needs: build-web
     environment:
