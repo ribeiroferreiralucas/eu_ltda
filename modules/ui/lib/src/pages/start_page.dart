@@ -1,13 +1,16 @@
 
 import 'package:flutter/material.dart';
-import 'package:ui/src/menu_widget.dart';
+import 'package:ui/src/pages/menu_widget.dart';
+
+import '../commons/navigator_wrapper.dart';
 
 class StartPage extends StatefulWidget {
   final bool isTestInstance;
+  final NavigatorWrapper navigatorWrapper;
 
-  const StartPage({super.key}) : isTestInstance = false;
+  const StartPage(this.navigatorWrapper, {super.key}) : isTestInstance = false;
 
-  StartPage.createTestInstance() : isTestInstance = true;
+  StartPage.createTestInstance(this.navigatorWrapper) : isTestInstance = true;
 
   @override
   State<StartPage> createState() => _StartPageState();
@@ -15,7 +18,7 @@ class StartPage extends StatefulWidget {
   MenuWidget createMenuWidget() {
     if(isTestInstance)
       return MenuWidget.createNull();
-    return MenuWidget();
+    return MenuWidget(navigatorWrapper);
   }
 }
 

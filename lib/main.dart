@@ -7,10 +7,11 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
+  
   @override
   Widget build(BuildContext context) {
+    final NavigatorWrapper navigatorWrapper = NavigatorWrapper();
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const StartPage(),
+      navigatorObservers: [navigatorWrapper],
+      home: StartPage(navigatorWrapper),
     );
   }
 }

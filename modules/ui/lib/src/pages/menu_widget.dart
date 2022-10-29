@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:ui/src/commons/navigator_wrapper.dart';
 
 class MenuWidget extends StatelessWidget{
   
-  MenuWidget() {}
+  final NavigatorWrapper navigator;
 
-  factory MenuWidget.createNull() {
-    return NullMenuWidget(); 
-  }
+  MenuWidget(this.navigator);
+
+  MenuWidget.createNull() : this.navigator = NavigatorWrapper.createNull(); 
 
   @override
   Widget build(BuildContext context) { 
@@ -22,21 +23,12 @@ class MenuWidget extends StatelessWidget{
           TextButton(
             key: Key("toIngredientsPageBtn"),
             child: const Text("Ingredients"),
-            onPressed: () {},
+            onPressed: () {this.navigator.navegateTo("/ingredients");},
           ),
         ],
       )
     );
   }
 }
-
-class NullMenuWidget extends MenuWidget {
-
-  @override
-  Widget build(BuildContext context) { 
-    return Container();
-  }
-}
-
 
 
