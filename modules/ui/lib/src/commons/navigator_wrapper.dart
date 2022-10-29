@@ -30,9 +30,7 @@ class NavigatorWrapper extends NavigatorObserver {
 
 }
 
-class RouteNotFound implements Exception {
-
-}
+class RouteNotFound implements Exception { }
 
 
 class NullNavigatorState implements NavigatorState {
