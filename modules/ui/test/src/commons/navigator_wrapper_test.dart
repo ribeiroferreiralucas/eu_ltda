@@ -73,13 +73,7 @@ void main() {
 
       expect(navigatorWrapper.currentLocation, "/page1");
     });
-
-    testWidgets("should throw RouteNotFound if not configurated rote", (WidgetTester tester) async {
-
-      var navigatorWrapper = NavigatorWrapper.createNull(routes: ["/page1"]);
-      
-      expect(() => navigatorWrapper.navegateTo("/unknowpage"), throwsA(isA<RouteNotFound>()));
-    });
+    
   });
 }
 
