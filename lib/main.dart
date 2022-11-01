@@ -26,6 +26,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+      routes: <String, WidgetBuilder>{
+        "/ingredients": (context) => IngredientsPage(navigatorWrapper)  
+      },
       navigatorObservers: [navigatorWrapper],
       home: StartPage(navigatorWrapper),
     );
